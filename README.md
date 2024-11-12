@@ -8,11 +8,13 @@ Invoke below URLs to start the process -
 1. http://localhost:8080/start/VoipProcess
 2. http://localhost:8080/start/process-2
 
-More information about Camunda-8 can be found here : https://docs.camunda.io/docs/guides/
+Other camunda operate rest endpoints - 
 
-Sample request body - 
+POST: http://localhost:8080/access-token-rest-client
 
-Process-definitions-custom
+GET: http://localhost:8080/incident/2251799813961990
+
+POST: http://localhost:8080/process-definitions-custom
 
 {
   "filter": {
@@ -34,7 +36,9 @@ Process-definitions-custom
   ]
 }
 
-Search incidents - 
+POST: http://localhost:8080/access-token
+
+POST: http://localhost:8080/search-incidents
 
 {
   "filter": {
@@ -56,4 +60,24 @@ Search incidents -
   ]
 }
 
+POST: http://localhost:8080/resolve-incident/2251799813961990
 
+POST: http://localhost:8080/process-definitions
+
+To get the access token from camunda cloud - 
+
+GET: https://login.cloud.camunda.io/oauth/token
+
+Set body as Form URL Encoded in postman/Insomnia and add below fields - 
+
+client_secret: <client_secret>
+
+client_id: <client_id>
+
+audience: operate.camunda.io
+
+grant_type: client_credentials
+
+
+
+More information about Camunda-8 can be found here : https://docs.camunda.io/docs/guides/
